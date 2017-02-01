@@ -1,19 +1,22 @@
-var app = angular.module('angApp', []);
+var app = angular.module('EmployeeApp', []);
 
-app.controller('AngController', function (){
-  console.log ('AngController loaded'); //
+app.controller('EmployeeController', function (){
+  console.log('EmployeeController loaded');
 
+  var eArr = this;
 
-    var intro = this;
+  eArr.employees = [];
+  eArr.salTot = 0;
 
-    intro.fullName = 'Scott Fox'
+  eArr.addEmployee = function(employee){
 
-    intro.upsilon = ['P1', 'P2', 'P3'];
+    eArr.employees.push(angular.copy(employee));
+    console.log("Employee Object from Form:", angular.copy(employee));
+    eArr.salTot += employee.as;
+    console.log(eArr.salTot)
+  };
 
-    intro.cohorts = []
-    //
-    // intro.addCo = function () {
-    //   intro.cohorts.push(intro.co.name);
-    // }
-
-}); // end of app.controller
+  eArr.deleteEmployee = function(employee){
+    eArr.employees
+  }
+});
